@@ -1,1 +1,1 @@
-console.log(Math.floor(Math.random()*100));
+let randomNumber=Math.floor(Math.random()*100);
