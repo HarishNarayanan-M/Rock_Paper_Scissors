@@ -4,13 +4,13 @@ let computerScore=0;
 
 function getComputerChoice(){
     if(randomNumber>=0&& randomNumber<=33){
-        console.log("Rock");
+        return "Rock";
     }
     else if(randomNumber>33&& randomNumber<=66){
-        console.log("Paper");
+        return "Paper"
     }
     else{
-        console.log("Scissor");
+        return "Scissor";
     }
 }
 
@@ -20,18 +20,19 @@ function getHumanChoice(){
    let choice= prompt("Enter you choice 1.Rock 2.Paper 3.Scissor").toLowerCase();
 
    if(choice=="rock"){
-    console.log("Rock")
-   }
+    return "Rock"
+}
    else if(choice=="paper"){
-    console.log("Paper");
+    return "Paper"
    }
    else if(choice=="scissor"){
-    console.log("scissor");
+    return "Scissor"
    }
    else{
-    console.log("Invalid choice");
+    return "Invalid choice"
    }
 
 }
+console.log(getHumanChoice());
 
-getHumanChoice();
+
