@@ -1,4 +1,6 @@
 let randomNumber=Math.floor(Math.random()*100);
+let humanScore=0;
+let computerScore=0;
 
 function getComputerChoice(){
     if(randomNumber>=0&& randomNumber<=33){
