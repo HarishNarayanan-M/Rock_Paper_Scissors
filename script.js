@@ -14,8 +14,6 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice());
-
 function getHumanChoice(){
    let choice= prompt("Enter you choice 1.Rock 2.Paper 3.Scissor").toLowerCase();
 
@@ -33,6 +31,51 @@ function getHumanChoice(){
    }
 
 }
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+    if(humanSelection==computerSelection){
+        console.log("It is a draw!");
+        console.log(humanScore);
+        console.log(computerScore);
+    }
+    else if (humanSelection=="Rock"&&computerSelection=="Scissor"){
+        console.log("you won! Rock beats Scissor.")
+        console.log(++humanScore);
+        console.log(computerScore);
+    }
+    else if (humanSelection=="Paper"&&computerSelection=="Rock"){
+        console.log("you won! Paper beats Rock.")
+        console.log(++humanScore);
+        console.log(computerScore);
+    }
+    else if (humanSelection=="Scissor"&&computerSelection=="Paper"){
+        console.log("you won! Scissor beats Paper.")
+        console.log(++humanScore);
+        console.log(computerScore);
+    }
+    else if (humanSelection=="Rock"&&computerSelection=="Paper"){
+        console.log("you lost! Paper beats Rock.")
+        console.log(humanScore);
+        console.log(++computerScore);
+    }
+    else if (humanSelection=="Paper"&&computerSelection=="Scissor"){
+        console.log("you lost! Paper beats Scissor.")
+        console.log(humanScore);
+        console.log(++computerScore);
+    }
+    else if (humanSelection=="Scissor"&&computerSelection=="Rock"){
+        console.log("you lost! Scissor beats Rock.")
+        console.log(humanScore);
+        console.log(++computerScore);
+    }
+    else{
+        console.log("Invalid choice!")
+    }
+  }
+  
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+
+  playRound(humanSelection, computerSelection);
+
 
 
