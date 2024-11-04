@@ -33,7 +33,7 @@ let humanScore=0;
 let computerScore=0;
 function playRound(humanChoice, computerChoice) {
     if(humanChoice==computerChoice){
-        console.log("It is a draw!");
+        console.log(`It is a draw! you and computer choose ${humanChoice}`);
         console.log(`Human score:${humanScore}`);
         console.log(`Computer score:${computerScore}`);
     }
