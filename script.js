@@ -78,3 +78,16 @@ function playRound(humanChoice, computerChoice) {
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
 }
+
+if(humanScore>computerScore){
+    console.log("Results:");
+    console.log(`You won by ${humanScore-computerScore}`);
+}
+else if(computerScore>humanScore){
+    console.log("Results:");
+    console.log(`Computer won by ${computerScore-humanScore}`);
+}
+else{    
+    console.log("Results:");
+    console.log("The scores are tied and match draw!");
+}
