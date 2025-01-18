@@ -71,14 +71,16 @@ function playRound(humanChoice, computerChoice) {
         console.log("Invalid choice!")
     }
   }
-  
-  for (let i = 0; i < 5; i++) {
-    console.log(`Round ${i + 1}:`);
+ 
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-}
 
+
+
+
+    
+/*
 if(humanScore>computerScore){
     console.log("Results:");
     console.log(`You won by ${humanScore-computerScore}`);
@@ -91,3 +93,4 @@ else{
     console.log("Results:");
     console.log("The scores are tied and match draw!");
 }
+    */
