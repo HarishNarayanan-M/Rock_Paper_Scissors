@@ -11,23 +11,37 @@ function getComputerChoice(){
     }
 }
 
-function getHumanChoice(){
-   let choice= prompt("Enter you choice 1.Rock 2.Paper 3.Scissor").toLowerCase();
+function getHumanChoice(callback){
+    const rock=document.querySelector(".rock");
+    const paper=document.querySelector(".paper");
+    const scissor=document.querySelector(".scissor");
 
-   if(choice=="rock"){
-    return "Rock"
-}
-   else if(choice=="paper"){
-    return "Paper"
-   }
-   else if(choice=="scissor"){
-    return "Scissor"
-   }
-   else{
-    return "Invalid choice"
-   }
+    function removeListener(){
+        rock.removeEventListener("click",rockFunction)
+        paper.removeEventListener("click",paperFunction)
+        scissor.removeEventListener("click",scissorFunction)
+    }
 
+    function rockFunction(){
+        callback("Rock");
+        removeListener();
+    }
+
+    function paperFunction(){
+        callback("Paper");
+        removeListener();
+    }
+
+    function scissorFunction(){
+        callback("Scissor");
+        removeListener();
+    }
+
+    rock.addEventListener("click",rockFunction);
+    paper.addEventListener("click",paperFunction);
+    scissor.addEventListener("click",scissorFunction);
 }
+
 
 let humanScore=0;
 let computerScore=0;
@@ -72,25 +86,31 @@ function playRound(humanChoice, computerChoice) {
     }
   }
  
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+  function playGame(call,roundLeft) {
+    if (roundLeft > 0) {
+        const computerSelection = getComputerChoice();
+        getHumanChoice((humanSelection) => {
+            playRound(humanSelection, computerSelection);
+            playGame(call,roundLeft - 1); 
+        });
+    } else {
+        call();
+    }
+}
 
-
-
-
+function results(){
+    if(humanScore>computerScore){
+        console.log("Results:");
+        console.log(`You won by ${humanScore-computerScore}`);
+    }
+    else if(computerScore>humanScore){
+        console.log("Results:");
+        console.log(`Computer won by ${computerScore-humanScore}`);
+    }
+    else{    
+        console.log("Results:");
+        console.log("The scores are tied and match draw!");
+    }
+}
+playGame(results,5);
     
-/*
-if(humanScore>computerScore){
-    console.log("Results:");
-    console.log(`You won by ${humanScore-computerScore}`);
-}
-else if(computerScore>humanScore){
-    console.log("Results:");
-    console.log(`Computer won by ${computerScore-humanScore}`);
-}
-else{    
-    console.log("Results:");
-    console.log("The scores are tied and match draw!");
-}
-    */
