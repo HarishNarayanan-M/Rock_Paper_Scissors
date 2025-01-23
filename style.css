@@ -1,0 +1,46 @@
+button{
+    background-color: #bd0f4f;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 48%;
+}
+.rock{
+    padding: 56px;
+}
+.paper{
+    padding: 52px;
+}
+.scissor{
+    padding: 50px;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons{
+    height: 25%;
+    width: 80%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.scores{
+    display: flex;
+    gap:60px;
+}
